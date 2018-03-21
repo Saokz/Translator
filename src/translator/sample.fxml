@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="translator.Controller">
+    <children>
+        <AnchorPane id="Translator" fx:id="transAnchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TextArea id="textToBeTranslated" fx:id="textToBeTranslated" layoutX="14.0" layoutY="161.0" prefHeight="132.0" prefWidth="243.0">
+                    <font>
+                        <Font name="Arial Black" size="12.0" />
+                    </font></TextArea>
+                <TextArea id="translation" fx:id="translation" layoutX="384.0" layoutY="161.0" prefHeight="132.0" prefWidth="243.0">
+                    <font>
+                        <Font name="Arial Black" size="12.0" />
+                    </font>
+                </TextArea>
+                <ImageView id="switchButton" fx:id="switchButton" fitHeight="52.0" fitWidth="48.0" layoutX="294.0" layoutY="203.0" onMouseClicked="#switchMode" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Switch.PNG" />
+                    </image>
+                </ImageView>
+                <Button fx:id="translate" alignment="CENTER" layoutX="279.0" layoutY="316.0" mnemonicParsing="false" onAction="#translateText" style="-fx-background-color: #CDCDCD;" text="Translate">
+                    <font>
+                        <Font name="Arial Black" size="12.0" />
+                    </font>
+                    <effect>
+                        <Blend />
+                    </effect>
+                </Button>
+                <Label alignment="CENTER" prefHeight="49.0" prefWidth="640.0" text="Unga Bunga Tounga Translator">
+                    <font>
+                        <Font name="Arial Black" size="34.0" />
+                    </font>
+                </Label>
+                <Label layoutX="196.0" layoutY="75.0" text="Enter text to translate">
+                    <font>
+                        <Font name="Arial Black" size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="errorLabel" alignment="TOP_LEFT" layoutX="384.0" layoutY="293.0" prefHeight="51.0" prefWidth="243.0" text="Note: One or more of the words entered did not exist in the dictionary. Returning our best guess..." visible="false" wrapText="true" />
+                <Label layoutX="14.0" layoutY="132.0" text="English" fx:id="leftLabel">
+                    <font>
+                        <Font name="Arial Black" size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="rightLabel" layoutX="384.0" layoutY="132.0" text="Unga Bunga Tounga">
+                    <font>
+                        <Font name="Arial Black" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+            <effect>
+                <Blend />
+            </effect>
+        </AnchorPane>
+    </children>
+</VBox>

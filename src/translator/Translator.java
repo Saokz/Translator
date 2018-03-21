@@ -21,6 +21,8 @@ public class Translator {
 	private HashMap<String, String> culture = new HashMap<>();
 	private ArrayList<String> keys;
 	private boolean dictExists;
+	private boolean noTrans = false; /*Flag for translating to English. Let's the user know we could not find
+											  an English translation for one or more words*/
 
 	private final int ALPHABET_START_UPPER_CASE = 65;
 	private final int ALPHABET_END_UPPER_CASE = 90;
@@ -281,13 +283,12 @@ public class Translator {
 		int count = 0; //How we break the loop
 		int countMax = words.length;
 		ArrayList<String> incCombs = new ArrayList<>(); //Also how we break the loop
-		boolean incFlag = false; //Flag for if we can't find the word in the dictionary
 	
 		while(count < countMax)
 		{
 			for (String s : words)
             {
-				int possStrCombs = getNumofPossibleStrings(s); //How many different translations are possible?
+				int possStrCombs = getPossEngTrans(s); //How many different translations are possible?
 				String trans = reverseTranslate(s); //Start us off
 
                 //While our guess translation is incorrect, and we haven't maxed out the possible combinations
@@ -305,7 +306,7 @@ public class Translator {
 				 */
 				if (incCombs.size() >= possStrCombs)
 				{
-					incFlag = true; //Let the user know that we couldn't find it
+					noTrans = true; //Let the user know that we couldn't find it
 				}
 
 				/*We're done with this word, so we clear the combinations
@@ -318,13 +319,6 @@ public class Translator {
 				
 			}
 			
-		}
-
-		//If we couldn't find one of the words in the dictionary
-		if (incFlag)
-		{
-		    //Return our best guess
-			return "[POSSIBLE TRANSLATION]: " + englishText.trim();
 		}
 
 		//Return the translation
@@ -347,18 +341,38 @@ public class Translator {
      * @param str String to be translated
      * @return The number of possible translations
      */
-	public int getNumofPossibleStrings(String str)
+	/**
+	 * This returns the number of possible English translations for any given word
+	 * in the language.
+	 *
+	 * The number of possible translations is determined solely by how many vowels
+	 * there are in the string.
+	 *
+	 * e.g. tuuoit
+	 *      Has 4 vowels.
+	 *      2^4 = 16 possible translations
+	 * One of which, is the correct English translation: Stones
+	 *
+	 *Words with 'A's in them don't count. When translating back to English,
+	 *'A's always translate to a 'Z'.
+	 *
+	 * @param str String to be translated
+	 * @return The number of possible translations
+	 */
+	public int getPossEngTrans(String str)
 	{
 		int numOfVowels = 0;
-		
+
 		for (char c : str.toCharArray())
 		{
 			if (isVowel(c) || c == 'y' || c == 'Y')
 			{
+				if (c == 'A' || c == 'a')
+					break;
 				numOfVowels++;
 			}
 		}
-		
+
 		return (int) Math.pow(2, numOfVowels);
 	}
 
@@ -398,6 +412,21 @@ public class Translator {
 		}
 		
 		return t;
+	}
+
+	/**
+	 * Method that tells you whether or not the latest translation
+	 * from translateToEnglish had a word that was not in the dictionary.
+	 * @return
+	 */
+	public boolean getNoTrans()
+	{
+		boolean tempBool = noTrans;
+		if (noTrans)
+		{
+			noTrans = false;
+		}
+		return tempBool;
 	}
 	
 }
