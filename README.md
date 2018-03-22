@@ -12,7 +12,7 @@ The culture of this language is primarily based around stones and Counter-Strike
 ## Change Log
 - Added a GUI for the translator
 - Removed incFlag, changed it to a global flag to be better integrated into the GUI
-- Changed getPossNumberOfStrings, or whatever it was called before, to getPossEngTrans.
+- Changed getPossNumberOfStrings, or whatever it was called before, to getPossEngTrans
   to add clarity.
 - Fixed a bug regarding the letter 'A' when translating to English. 'A's in this language
   always translate into 'Z's when going in reverse. So as far as the translator is concerned,
