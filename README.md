@@ -29,3 +29,9 @@ The culture of this language is primarily based around stones and Counter-Strike
   I'll figure something out later.
   
 - The GUI is not resizable. You just have to deal with it being 640x400. I'll also figure something out for that later.
+- The translator interprets words with punctuation at the end of them as different words. For example, the translator will
+  search the dictionary for the word "you?", and since "you?" is technically not a word in the dictionary, it will not know
+  that this is an English word. The translation for 'you' is 'zuy', but if you tried to translate 'zuy?' into English, it might
+  return 'ytx?' or 'ytu?'
+  
+  This is something that I will work on.
