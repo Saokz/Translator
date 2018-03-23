@@ -9,6 +9,11 @@ A language cannot be separated from the culture of those who speak it. But, not 
 language, so we have to inject the culture artificially by creating our own idioms and non-literal translations.
 The culture of this language is primarily based around stones and Counter-Strike.
 
+## Dictionary
+Sometimes certain words don't exist in the dictionary file. Sometimes super weird words are in the dictionary file, and they share translations with common words that you're most likely going to be using more. If you're not getting the translation
+you want, check to make sure that the word you're using is in the dictionary file, and if not, you can add it. You can also
+remove words from the dictionary file; words that you think you'll never use. Doesn't matter. You downloaded it, it's yours.
+
 ## Change Log
 - Added a GUI for the translator
 - Removed incFlag, changed it to a global flag to be better integrated into the GUI
