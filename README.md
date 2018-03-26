@@ -14,7 +14,19 @@ Sometimes certain words don't exist in the dictionary file. Sometimes super weir
 you want, check to make sure that the word you're using is in the dictionary file, and if not, you can add it. You can also
 remove words from the dictionary file; words that you think you'll never use. Doesn't matter. You downloaded it, it's yours.
 
-## Change Log
+## Change Log 3/25/2018
+- Fixed the punctuation issue. The translator can now interpret sentences with full punctuation with no problem...for the most
+  part. Something like "words words words (parentheses)." might not work, but I've decided that this is fine for now.
+  I'll deal with that issue later. For about, 99% of the time, it will work just fine.
+- Updated the dictionary file. Deleted the word "eave" because it has the same translation as "have". Added the word "to".
+  I'll also probably delete the dictionary file from the repository, because that's not really needed. You can just go to the
+  releases to find it.
+- Updated the release to include the fixed version of the translator, the new dictionary file, and a new exceptions.txt
+  that contain some examples of culture.
+- Updated the documentation to be a little less intrusive. I just felt like the previous documentation made the code
+  a little harder to read. 
+
+## Change Log 3/24/2018
 - Added a GUI for the translator
 - Removed incFlag, changed it to a global flag to be better integrated into the GUI
 - Changed getPossNumberOfStrings, or whatever it was called before, to getPossEngTrans
@@ -34,9 +46,3 @@ remove words from the dictionary file; words that you think you'll never use. Do
   I'll figure something out later.
   
 - The GUI is not resizable. You just have to deal with it being 640x400. I'll also figure something out for that later.
-- The translator interprets words with punctuation at the end of them as different words. For example, the translator will
-  search the dictionary for the word "you?", and since "you?" is technically not a word in the dictionary, it will not know
-  that this is an English word. The translation for 'you' is 'zuy', but if you tried to translate 'zuy?' into English, it might
-  return 'ytx?' or 'ytu?'
-  
-  This is something that I will work on.
