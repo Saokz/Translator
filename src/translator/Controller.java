@@ -15,12 +15,6 @@ public class Controller{
     Translator trans = new Translator();
     private boolean toEnglish = false;
 
-    /**
-     * CURRENT PROBLEM:
-     *
-     * Translator crashes when given a sequence of Unga Bunga words that do have English Translations,
-     * followed by one that does not.
-     */
     public void switchMode()
     {
         /*If we were translating to English, but want
