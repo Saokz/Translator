@@ -48,21 +48,7 @@ public class Translator {
 			e.printStackTrace();
 		}
 	}
-
-	/**
-	 * Method that checks if a word exists in the dictionary.
-	 *
-	 * @param word The word that is to be checked.
-	 * @return True if it exists in the dictionary, false otherwise.
-	 */
-
-	/**
-	 * Translate an english string into UngaBungaTounga, following the
-	 * rules of the cipher.
-	 *
-	 * @param str String to be translated
-	 * @return UngaBungian translation
-	 */
+	
 	public String translate(String par1Str, boolean English)
 	{
 		StringBuilder newText = new StringBuilder();
