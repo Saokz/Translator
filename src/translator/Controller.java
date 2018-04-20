@@ -10,28 +10,36 @@ public class Controller{
     public ImageView switchButton;
     public TextArea textToBeTranslated;
     public TextArea translation;
-    public Label errorLabel, leftLabel, rightLabel;
+    public Label leftLabel, rightLabel;
 
     Translator trans = new Translator();
-    private boolean toEnglish = false;
+    private boolean fromEnglish = true;
 
+    /**
+     * CURRENT PROBLEM:
+     *
+     * 'How are you?' doesn't translate properly back into english.
+     *  I've checked. The translator has no problem finding all those words
+     *  in the dictionary. It's only when they're together that it says
+     *  there's no correct English translation.
+     */
     public void switchMode()
     {
         /*If we were translating to English, but want
           switch modes*/
-        if (toEnglish)
-        {
-            //Let the user know we are now translating from English to Unga Bunga Tounga
-            leftLabel.setText("English");
-            rightLabel.setText("Unga Bunga Tounga");
-        }else //We were translating to Unga Bunga Tounga, but want to switch modes
+        if (fromEnglish)
         {
             //Let the user know we are now translating from Unga Bunga Tounga to English
             leftLabel.setText("Unga Bunga Tounga");
             rightLabel.setText("English");
+        }else //We were translating to Unga Bunga Tounga, but want to switch modes
+        {
+            //Let the user know we are now translating from English to Unga Bunga Tounga
+            leftLabel.setText("English");
+            rightLabel.setText("Unga Bunga Tounga");
         }
 
-        toEnglish = !toEnglish;
+        fromEnglish = !fromEnglish;
 
         //Do that cool thing google translate does
         String temp;
@@ -44,21 +52,8 @@ public class Controller{
     public void translateText()
     {
         String newText;
-        errorLabel.setVisible(false);
 
-        if (toEnglish)
-        {
-            newText = trans.translateToEnglish(textToBeTranslated.getText());
-        }else
-        {
-           newText = trans.translate(textToBeTranslated.getText());
-        }
-
-        if (trans.getNoTrans())
-        {
-            errorLabel.setVisible(true);
-        }
-
+        newText = trans.translate(textToBeTranslated.getText(), fromEnglish);
         translation.setText(newText);
     }
 
