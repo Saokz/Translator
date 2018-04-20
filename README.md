@@ -1,26 +1,18 @@
-# Translator
+# Translator V3
 A translator for a made-up language: Unga Bunga Tounga
 
-The language is basically a cipher, but with some exceptions. These exceptions are idioms/non-literal
-translations that add culture, and serve to legitimize the cipher as a language.
+Well...it needs a better name. The root words for the language are made by putting English words through a basic cipher.
+It just takes out all the work of thinking of approximately 2,000,000 different combinations of letters to make
+words for a language. The plan is to implement a complete grammatical structure for the language that is completely unique
+from English. The language will be topic-prominent and agglutinative. 
 
-## Culture
-A language cannot be separated from the culture of those who speak it. But, not many people speak this
-language, so we have to inject the culture artificially by creating our own idioms and non-literal translations.
-The culture of this language is primarily based around stones and Counter-Strike.
-
-## Dictionary
-Sometimes certain words don't exist in the dictionary file. Sometimes super weird words are in the dictionary file, and they share translations with common words that you're most likely going to be using more. If you're not getting the translation
-you want, check to make sure that the word you're using is in the dictionary file, and if not, you can add it. You can also
-remove words from the dictionary file; words that you think you'll never use. Doesn't matter. You downloaded it, it's yours.
+Right now, this is just the base of the language. All the translator does right now is it takes strings and puts them
+through the cipher. It's a significant step back from V2 of the translator, but it has greatly simplified everything to
+start off with. This is great, because implementing the grammatical structure is going to be significantly harder than
+what I did before with V2. Plus, I still haven't fully finished the grammatical structure of the language. I still need
+to think of some affixes and some pronunciation rules.
   
 ## Bugs
-- Some words have duplicate translations. For example, "and" and "did" both translate to "eoe". "have" and "eave"
-  both translate to "iewi". This is a flaw by design, and there's really not much I can do about it for now. Just know 
-  that if you translate full sentences, sometimes they won't make sense when translated into English.
-  
-  Example in a sentence: "I have lost all motivation" -> "O iewi mutu emm nuuoweuouo"
-                         "O iewi mutu emm nuuoweuouo" -> "I eave lost all motivation"
-  I'll figure something out later.
-  
-- The GUI is not resizable. You just have to deal with it being 640x400. I'll also figure something out for that later.
+- None of the bugs from V2 made it into this version, because completely rebuilt this from the ground up. But, with all that
+  being said... 
+- The GUI is still not resizable. You still have to deal with it being 640x400.
