@@ -3,7 +3,7 @@ A translator for a made-up language: Unga Bunga Tounga
 
 Well...it needs a better name. The root words for the language are made by putting English words through a basic cipher.
 It just takes out all the work of thinking of approximately 2,000,000 different combinations of letters to make
-words for a language. The plan is to implement a complete grammatical structure for the language that is completely unique
+words for a language. The plan is to implement a complete grammatical structure for the language that is unique
 from English. The language will be topic-prominent and agglutinative. 
 
 Right now, this is just the base of the language. All the translator does right now is it takes strings and puts them
@@ -13,6 +13,6 @@ what I did before with V2. Plus, I still haven't fully finished the grammatical 
 to think of some affixes and some pronunciation rules.
   
 ## Bugs
-- None of the bugs from V2 made it into this version, because completely rebuilt this from the ground up. But, with all that
+- None of the bugs from V2 made it into this version, because I completely rebuilt this from the ground up. But, with all that
   being said... 
 - The GUI is still not resizable. You still have to deal with it being 640x400.
