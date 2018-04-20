@@ -15,12 +15,12 @@ public class Translator {
 
 	private HashMap<Character, Character> engTrans = new HashMap<>();
 	private HashMap<Character, Character> revTrans = new HashMap<>();
-
+	
 	public Translator()
 	{
 		loadCipher();
 	}
-
+	
 	private void loadCipher()
 	{
 		File f = new File("rules.txt");
@@ -30,30 +30,39 @@ public class Translator {
 			{
 				f.createNewFile();
 			}
-
+			
 			BufferedReader fr = new BufferedReader(new FileReader(f));
 			String currentLine = fr.readLine();
-
+			
 			while(currentLine != null)
 			{
+				/* Establish a mapping for the cipher, translating to and
+				 * from English
+				 */
 				engTrans.put(currentLine.charAt(0), currentLine.charAt(2));
 				revTrans.put(currentLine.charAt(2), currentLine.charAt(0));
 				currentLine = fr.readLine();
 			}
-
+			
 			fr.close();
-
+			
 		}catch (IOException e)
 		{
 			e.printStackTrace();
 		}
 	}
-	
+
+    /**
+     * Translates a string to the language and back
+     * @param par1Str String to be translating
+     * @param English flag for determining which direction we translate in. True means from English to the language
+     * @return Translated string
+     */
 	public String translate(String par1Str, boolean English)
 	{
 		StringBuilder newText = new StringBuilder();
 		char[] letters = par1Str.toCharArray();
-
+		
 		for (char c: letters)
 		{
 			char translatedLetter;
@@ -70,11 +79,11 @@ public class Translator {
 					translatedLetter = revTrans.get(c);
 				}
 			}
-
+			
 			newText.append(translatedLetter);
 		}
-
+		
 		return newText.toString();
 	}
-
+	
 }
