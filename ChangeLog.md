@@ -1,3 +1,10 @@
+## 4/20/2018
+- Created base for V3 of the translator
+- Made major design changes to the language. The frequency of vowels has been reduced, and the cipher that determines the
+  words of the language has been simplified. As a result, the translator has been really super simplified. The plan is
+  to give this language a complete grammatical structure unique from English to really legitimize it as a language.
+- Took out the "culture" aspect. This was fine when the language was still mostly a joke, but I'm taking this project a little 
+  more seriously than I was before, so now it just seems dumb. 
 ## 3/25/2018
 - Fixed the punctuation issue. The translator can now interpret sentences with full punctuation with no problem...for the most
   part. Something like "words words words (parentheses)." might not work, but I've decided that this is fine for now.
