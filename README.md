@@ -1,7 +1,7 @@
 # Translator V3
 A translator for a made-up language: Unga Bunga Tounga
 
-Well...it needs a better name. The root words for the language are made by putting English words through a basic cipher.
+The root words for the language are made by putting English words through a basic cipher.
 It just takes out all the work of thinking of approximately 2,000,000 different combinations of letters to make
 words for a language. The plan is to implement a complete grammatical structure for the language that is unique
 from English. The language will be topic-prominent and agglutinative. 
