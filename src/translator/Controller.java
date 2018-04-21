@@ -15,14 +15,6 @@ public class Controller{
     Translator trans = new Translator();
     private boolean fromEnglish = true;
 
-    /**
-     * CURRENT PROBLEM:
-     *
-     * 'How are you?' doesn't translate properly back into english.
-     *  I've checked. The translator has no problem finding all those words
-     *  in the dictionary. It's only when they're together that it says
-     *  there's no correct English translation.
-     */
     public void switchMode()
     {
         /*If we were translating to English, but want
