@@ -1,3 +1,6 @@
+#EDIT 2/25/2019
+This project is just about dead. Not surprisingly, creating a full out language from scratch is pretty hard. But this project's inspired me to pursue a minor in Linguistics. Maybe I'll come back to this sometime in the future.
+
 # Translator V3
 A translator for a made-up language: Unga Bunga Tounga
 
